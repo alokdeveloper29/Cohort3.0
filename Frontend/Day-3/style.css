@@ -17,6 +17,7 @@ body {
     background-color: rgb(4, 28, 48);
     display: flex;
     flex-wrap: wrap;
+    
     /* flex-wrap: nowrap; */
 
     column-gap: 20px;
