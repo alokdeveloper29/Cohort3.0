@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
+    color: white;
+    font-size: 30px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* ===== LAYOUT 1 ===== */
+
+.main1{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: grid;
+    gap: 20px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "top-center top-center top-center"
+    "left-center center-bottom right-center"
+    "left-bottom center-bottom right-bottom";
+}
+
+.top-center{
+    background-color: lightseagreen;
+    grid-area: top-center;
+}
+
+.left-center{
+    background-color: royalblue;
+    grid-area: left-center;
+}
+
+.left-bottom{
+    background-color: cadetblue;
+    grid-area: left-bottom;
+}
+
+.center-bottom{
+    background-color: crimson;
+    grid-area: center-bottom;
+}
+
+.right-center{
+    background-color: tan;
+    grid-area: right-center;
+}
+
+.right-bottom{
+    grid-area: right-bottom;
+    background-color: aqua;
+}
+
+
+/* ===== LAYOUT 2 ===== */
+
+.main2{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: grid;
+    gap: 20px;
+
+    grid-template-rows: 10% 60% 30%;
+    grid-template-columns: 25% 25% 50%;
+
+    grid-template-areas: 
+    "header header header"
+    "left-center2 left-center2 right2"
+    "left-bottom1 left-bottom2 right2";
+}
+
+.header {
+    background-color: royalblue;
+    grid-area: header;
+}
+
+.left-center2 {
+    grid-area: left-center2;
+    background-color: lightseagreen;
+}
+
+.right2 {
+    grid-area: right2;
+    background-color: cadetblue;
+}
+
+.left-bottom1 {
+    grid-area: left-bottom1;
+    background-color: darkcyan;
+}
+
+.left-bottom2 {
+    grid-area: left-bottom2;
+    background-color: lightcoral;
+}
+
+
+/* ===== LAYOUT 3 ===== */
+
+.main3 {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+
+    display: grid;
+    gap: 20px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+    "top-left top-center3 right3"
+    "bottom-left bottom-left right3";
+}
+
+.top-left {
+    background-color: royalblue;
+    grid-area: top-left;
+}
+
+.top-center3 {
+    grid-area: top-center3;
+    background-color: crimson;
+}
+
+.right3 {
+    grid-area: right3;
+    background-color: rgb(20, 220, 217);
+}
+
+.bottom-left {
+    grid-area: bottom-left;
+    background-color: rgb(220, 20, 187);
+}
