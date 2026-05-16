@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+    display: grid;
+    gap: 30px;
+    padding-block: 30px;
+    padding-right: 30px;
+
+    grid-template-columns: 5fr 20fr 20fr 23fr 15fr 17fr;
+    grid-template-rows: 5fr 15fr 10fr 180fr;
+
+    grid-template-areas: 
+    "sidebar profile profile top-right top-right top-right"
+    "sidebar profile profile top-right top-right top-right"
+    "sidebar profile profile center-upper1 center-upper1 center-upper2"
+    "sidebar profile profile center-lower1 center-lower2 center-lower2";
+}
+
+.sidebar{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sidebar p{
+    font-size: 18px;
+    transform: rotate(-90deg);
+    font-family: "Inter", sans-serif;
+}
+
+.profile{
+    grid-area: profile;
+}
+.profile a{
+    position: absolute;
+    top: 6%;
+    font-family: "Inter", sans-serif;
+}
+.profile #dp{
+    height: 40%;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: relative;
+    top: 50px;
+    left: 50%;
+}
+.profile .down{
+    position: relative;
+    bottom: -18%;
+    display: flex;
+    flex-direction: column;
+}
+.profile img{
+    position: relative;
+    bottom: 4%;
+    left: 60%;
+}
+.profile h1{
+    font-size: 60px;
+    font-family: "Inter", sans-serif;
+    margin-left: 20px;
+}
+.profile p{
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.profile .box{
+    width: 100%;
+    height: 100%;
+    background-color: #8E8BEF;
+    border-radius: 10px;
+    clip-path: polygon(
+    45% 0,
+    100% 0,
+    100% 60%,
+    100% 100%,
+    0 100%,
+    0 6%,
+    37% 6%
+    );
+}
+
+.top-right{
+    grid-area: top-right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.top-right h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+}
+
+.center-upper1{
+    grid-area: center-upper1;
+}
+.center-upper1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.center-upper2{
+    grid-area: center-upper2;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.center-upper2 .top{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4%;
+    background-color: #C8F3F1;
+}
+
+.center-upper2 .top h2,
+.center-upper2 .bottom h2{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.center-upper2 .top p,
+.center-upper2 .bottom p{
+    font-family: "Inter", sans-serif;
+}
+
+
+.center-upper2 .bottom{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4%;
+    background-color: #B785E9;
+}
+
+.center-lower1{
+    grid-area: center-lower1;
+    background-color: #5E5E5E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    font-family: "Inter", sans-serif;
+    border-radius: 30px;
+}
+.center-lower1 img{
+    width: 20%;
+    object-fit: cover;
+}
+
+.center-lower2{
+    grid-area: center-lower2;
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.center-lower2 .left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #080808;
+}
+
+.center-lower2 .left img{
+    width: 40%;
+    object-fit: cover;
+}
+
+.center-lower2 .right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F5C35C;
+    padding-left: 10%;
+}
+
+.center-lower2 .right h2{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.center-lower2 .right p{
+    font-family: "Inter", sans-serif;
+}
