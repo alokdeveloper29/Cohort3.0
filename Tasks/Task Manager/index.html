@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager — DOM Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Task<span>Manager</span></div>
+    <div class="nav-right">
+      <span class="nav-sub">Cohort 3.0 — DOM Explorer</span>
+      <button id="themeToggle" data-theme="light">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ════════════ 1. TASK CREATION FORM ═════════════ -->
+    <section class="section form-section">
+      <h2>➕ Add New Task</h2>
+      <div class="form-card">
+
+        <div class="input-group">
+          <label>📝 Task Title</label>
+          <input type="text" id="taskTitle" value="" placeholder="Enter task title..." />
+        </div>
+
+        <div class="input-group">
+          <label>📄 Description</label>
+          <textarea id="taskDesc" placeholder="Enter task description..."></textarea>
+        </div>
+
+        <div class="row">
+          <div class="input-group">
+            <label>Task Type</label>
+            <select id="taskCategory">
+          <option value="Study">Study</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Finance">Finance</option>
+          <option value="Travel">Travel</option>
+          <option value="Meeting">Meeting</option>
+        </select>
+          </div>
+          <div class="input-group">
+            <label>📅 Due Date</label>
+            <input type="date" id="taskDate" />
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" id="submitBtn">Add Task</button>
+          <button id="clearAllBtn" class="btn-danger">🗑 Clear All</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═════════SEARCH + COUNTERS═════════ -->
+    <section class="section search-section">
+      <input type="text" id="searchInput" placeholder="🔍 Search tasks..." class="search-input"/>
+      <button>Search</button>
+      <div class="counters">
+        <div class="counter-card">📋 Total <span id="totalCount">0</span></div>
+        <div class="counter-card pending">⏳ Pending <span id="pendingCount">0</span></div>
+        <div class="counter-card completed">✅ Done <span id="completedCount">0</span></div>
+      </div>
+    </section>
+
+    <!-- ═════════ TASK LIST══════ -->
+    <section class="section task-section">
+      <h2>📋 Your Tasks</h2>
+      <div class="task-list" id="taskList">
+        <div class="empty-state">No tasks yet. Add your first task above! 👆</div>
+      </div>
+    </section>
+
+    <!-- ═══════════ATTRIBUTES vs PROPERTIES═════════ -->
+    <section class="section attr-section">
+      <h2>🔬 Attributes vs Properties</h2>
+      <div class="attr-card">
+        <p>Type something below, then click the button to see the difference:</p>
+        <input type="text" id="demoInput" value="Hello" placeholder="Type here..." class="demo-input"/>
+        <button id="demoBtn" class="demo-btn">Check Difference</button>
+        <div class="attr-result">
+          <div class="attr-box prop-box">
+            <h4>input.value</h4>
+            <p id="propResult">—</p>
+            <small>Property — changes as user types</small>
+          </div>
+          
+          <div class="attr-box attr-box2">
+            <h4>input.getAttribute("value")</h4>
+            <p id="attrRes">—</p>
+            <small>Attribute — stays as original HTML value</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════EVENT PROPAGATION DEMO══════════════ -->
+    <section class="section event-section">
+      <h2>🎯 Event Propagation Demo</h2>
+      <div class="prop-tabs">
+        <button class="tab-btn active" id="bubblingTab">Bubbling ↑</button>
+        <button class="tab-btn" id="capturingTab">Capturing ↓</button>
+      </div>
+      <p class="event-desc" id="eventDesc">
+        <strong>Bubbling:</strong> Child → Parent → Grandparent
+      </p>
+      <div class="grandparent" id="grandparent">
+        🟥 Grandparent
+        <div class="parent" id="parent">
+          🟨 Parent
+          <button class="child-btn" id="childBtn">🟦 Child Button — Click!</button>
+        </div>
+      </div>
+      <div class="event-log" id="eventLog">
+        <p class="log-placeholder">Click the button to see propagation order...</p>
+      </div>
+      <button id="clearLog" class="clear-log-btn">Clear Log</button>
+    </section>
+
+    <!-- ═══════════BROWSER RENDERING PIPELINE═══════════ -->
+    <section class="section pipeline-section">
+      <h2>🌐 Browser Rendering Pipeline</h2>
+      <p class="pipeline-desc">How browser converts HTML & CSS into pixels on screen:</p>
+
+      <div class="pipeline">
+
+        <div class="pipeline-col">
+          <div class="pipe-step s-html">HTML</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step">Parsing</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step">Tokenization</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step s-dom">DOM Tree</div>
+        </div>
+
+        <div class="pipe-plus">+</div>
+
+        <div class="pipeline-col">
+          <div class="pipe-step s-css">CSS</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step">Parsing</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step s-cssom">CSSOM Tree</div>
+        </div>
+
+        <div class="pipe-combine">
+          <div class="pipe-arrow">↓ Combine</div>
+          <div class="pipe-step s-render">🎨 Render Tree</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step s-layout">📐 Layout</div>
+          <div class="pipe-arrow">↓</div>
+          <div class="pipe-step s-paint">🖌️ Paint</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
