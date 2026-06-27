@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  width: 50vw;
+  max-width: 900px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.top h2 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.game-board {
+  width: 100%;
+  min-width: 350px;
+  height: 80vh;
+  border: 5px solid white;
+  border-radius: 25px;
+  background: transparent;
+  padding: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.smallBox {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.start-btn {
+  margin-top: 10px;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 15px;
+  background: white;
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gameOverBox {
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0de1;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding: 30px;
+  color: white;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.gameOverBox h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+.gameOverBox h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.buttons button:first-child {
+  background: #22c55e;
+  color: white;
+}
+
+.buttons button:last-child {
+  background: #ef4444;
+  color: white;
+}
+
+.buttons button:hover {
+  transform: translateY(-2px);
+}
+
+/**...............Responsive(768px)..............**/
+
+@media (max-width: 768px) {
+  .game-container {
+    width: 95vw;
+    min-height: 100vh;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .top h2 {
+    font-size: 1.2rem;
+  }
+
+  .game-board {
+    width: 100%;
+    min-width: unset;
+    height: 70vh;
+    border-width: 3px;
+  }
+
+  .smallBox {
+    width: 80px;
+    height: 80px;
+  }
+
+  .start-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .gameOverBox {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .gameOverBox h1 {
+    font-size: 2.5rem;
+  }
+
+  .gameOverBox h2 {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .buttons button {
+    width: 120px;
+    padding: 12px;
+  }
+}
+
+/**...............Responsive(320px-480px)..............**/
+
+@media (max-width: 480px) {
+  .top h2 {
+    font-size: 1rem;
+  }
+
+  .game-board {
+    height: 65vh;
+  }
+
+  .smallBox {
+    width: 70px;
+    height: 70px;
+  }
+
+  .gameOverBox h1 {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
