@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinTrack Pro</title>
+  <link rel="stylesheet" href="fintrack.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+</head>
+<body>
+  <main>
+    <div class="left">
+      <div class="logo">
+        <div class="left-section">
+          <img src="./finTrackLogo.png" alt="">
+        </div>
+        <div class="right-section">
+          <h2>FinTrack Pro</h2>
+          <p>Enterprise Finance</p>
+        </div>
+      </div>
+      <p id="dashboardBtn"><i class="ri-dashboard-line"></i>Dashboard</p>
+      <p id="settingsBtn"><i class="ri-settings-4-fill"></i>Settings</p>
+      <button class="add-transaction-Btn">
+        <i class="ri-add-line"></i> Add Transaction
+      </button>
+    </div>
+    <div class="right">
+      <div class="top">
+        <p id="username">alok</p>
+        <button id="logout"><i class="ri-logout-box-r-fill"></i>      Logout</button>
+      </div>
+      <div class="center">
+        <div class="header">
+          <h2>Financial Overview</h2>
+          <p>Real-time tracking application</p>
+        </div>
+        <div class="cards-row">
+          <div class="balance">
+            <i class="ri-bank-fill"></i>
+            <p>Current Balance</p>
+            <p class="currentBalance">$0.00</p>
+          </div>
+          <div class="income">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+            <p>Total Income</p>
+            <p class="totalIncome">$0.00</p>
+          </div>
+          <div class="expense">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+              <polyline points="17 18 23 18 23 12" />
+            </svg>
+            <p>Total Expense</p>
+            <p class="totalExpense">$0.00</p>
+          </div>
+          <div class="transaction">
+            <i class="ri-hand-coin-fill"></i>
+            <p>Total Transactions</p>
+            <p class="totalTransaction">0</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="chart">
+            <div class="chart-container">
+              <canvas id="cashFlowChart"></canvas>
+            </div>
+          </div>
+          <div class="preference">
+            <h2>Preferences</h2>
+            <div class="mood">
+              <p>Dark Mode</p>
+              <button type="button" class="darkModeBtn"></button>
+            </div>
+            <button id="resetAllBtn"><i class="ri-delete-bin-2-fill"></i>Reset All Data</button>
+          </div>
+        </div>
+        <div class="all-transaction">
+          <h2>All Transactions</h2>
+          <div class="search-type">
+            <div class="search">
+              <i class="ri-search-line"></i>
+              <input class="searchInput" type="text" placeholder="Search transactions..." />
+            </div>
+            <div class="type">
+              <select class="filter-select">
+                <option value="all">All Types</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+              </select>
+            </div>
+          </div>
+          <div class="heading">
+            <p>DATE</p>
+            <p>DESCRIPTION</p>
+            <p>CATEGORY</p>
+            <p>AMOUNT</p>
+            <p>ACTIONS</p>
+          </div>
+          <div class="transactions"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════ FORM PAGE ═══════════ -->
+  <div class="modal">
+    <div class="form-box">
+      <div class="form-header">
+        <h2 class="transactionHeading">Add Transaction</h2>
+        <i class="ri-close-line"></i>
+      </div>
+      <form id="form">
+        <label>Type</label>
+        <select>
+          <option>Income</option>
+          <option>Expense</option>
+        </select>
+        <label>Description</label>
+        <input required type="text" placeholder="e.g. Amazon, Salary, Coffee" />
+        <div class="row">
+          <div class="field">
+            <label>Amount</label>
+            <input required type="number" />
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <input required type="date" />
+          </div>
+        </div>
+        <label>Category</label>
+        <select>
+          <option>Shopping</option>
+          <option>Food</option>
+          <option>Salary</option>
+          <option>Travel</option>
+        </select>
+        <button class="submitBtn" type="submit">Save Transaction</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══════════ SETTINGS SECTION ═══════════ -->
+  <div class="settings-page">
+
+    <div class="settings-header">
+      <h2>Settings</h2>
+      <p>Manage your account profile and app formatting.</p>
+    </div>
+
+    <div class="settings-card">
+      <h2>Profile Details</h2>
+
+      <div class="settings-row">
+        <div class="settings-field">
+          <label>Full Name</label>
+          <input type="text" id="fullName" placeholder="Enter your name" value=""/>
+        </div>
+        <div class="settings-field">
+          <label>Primary Currency</label>
+          <select id="currency">
+            <option value="₹">INR (₹)</option>
+            <option value="$">USD ($)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="settings-save-btn saveBtn">Save Changes</button>
+    </div>
+
+  </div>
+
+   <!-- ═══════════ LOGIN BOX ═══════════ -->
+  <div class="auth-box login-box">
+    <h2>Welcome Back</h2>
+    <p>Login to FinTrack Pro</p>
+ 
+    <label>Username</label>
+    <input type="text" id="loginUsername" placeholder="Enter username" />
+ 
+    <label>Password</label>
+    <input type="password" id="loginPassword" placeholder="Enter password" />
+ 
+    <button id="loginBtn">Login</button>
+ 
+    <p class="switch-text">Don't have an account? <span class="showRegister">Register first</span></p>
+  </div>
+ 
+  <!-- ═══════════ REGISTER BOX ═══════════ -->
+  <div class="auth-box register-box">
+    <h2>Create Account</h2>
+    <p>Join FinTrack Pro</p>
+ 
+    <label>Choose a Username</label>
+    <input type="text" id="regUsername" placeholder="Enter username" />
+ 
+    <label>Password</label>
+    <input type="password" id="regPassword" placeholder="Enter password" />
+ 
+    <button id="registerBtn" class="green-btn">Register</button>
+ 
+    <p class="switch-text">Already have an account?<samp class="showLogin">Login here</samp></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
