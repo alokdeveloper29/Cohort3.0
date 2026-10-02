@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.parent{
+    background-color: crimson;
+    display: flex;
+    overflow: hidden;
+}
+.inner{
+    background-color: lightseagreen;
+    display: flex;
+    animation-name: anime;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+h4{
+    background-color: royalblue;
+    padding: 15px;
+    font-size: 20px;
+}
+
+@keyframes anime {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
