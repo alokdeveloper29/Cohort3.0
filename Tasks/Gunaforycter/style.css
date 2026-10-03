@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    background:#111;
+    font-family:'Poppins',sans-serif;
+    color:white;
+}
+
+body{
+    padding:35px 120px;
+}
+
+/* MAIN CONTAINER */
+
+#center{
+    width:100%;
+    background:#070707;
+    border-radius:28px;
+    padding:40px;
+    border:1px solid #1c1c1c;
+    box-shadow:0 0 30px rgba(255,140,0,0.05);
+}
+
+/* HEADER */
+
+header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+header h1{
+    font-size:68px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    color:white;
+    position:relative;
+}
+
+header h1::after{
+    content:"";
+    width:120px;
+    height:2px;
+    background:#ff7b00;
+    position:absolute;
+    left:50%;
+    bottom:-18px;
+    transform:translateX(-50%);
+}
+
+/* DRINK SECTION */
+
+#section1{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+/* CARD */
+
+.fourDiv{
+    width:220px;
+    background:linear-gradient(to bottom,#111,#090909);
+    border:1px solid #222;
+    border-radius:28px;
+    padding:18px;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.fourDiv:hover{
+    transform:translateY(-8px);
+    border:1px solid #ff7b00;
+    box-shadow:0 0 25px rgba(255,123,0,.22);
+}
+
+.fourDiv img{
+    width:100%;
+    height:250px;
+    object-fit:contain;
+}
+
+/* DRINK TITLE */
+
+.fourDiv h3{
+    font-size:34px;
+    margin-top:12px;
+    font-family:'Cormorant Garamond', serif;
+    color:white;
+    line-height:1;
+}
+
+/* TEXT */
+
+.fourDiv p{
+    color:#9a9a9a;
+    font-size:14px;
+    margin:10px 0 15px;
+}
+
+/* PRICE */
+
+.fourDiv h3:last-child{
+    color:#ff7b00;
+    font-size:28px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+}
+
+/* CHEF SECTION */
+
+#section2{
+    margin-top:35px;
+    background:#0b0b0b;
+    border:1px solid #1f1f1f;
+    border-radius:30px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+#food-img{
+    width:320px;
+    object-fit:contain;
+}
+
+#text{
+    flex:1;
+}
+/* SMALL TITLE */
+
+#section2 h3{
+    color:#ff7b00;
+    letter-spacing:5px;
+    font-size:13px;
+    margin-bottom:18px;
+    font-weight:500;
+}
+
+/* MAIN TITLE */
+
+#section2 h1{
+    font-size:64px;
+    line-height:1;
+    font-family:'Cormorant Garamond', serif;
+    margin-bottom:18px;
+    color:white;
+}
+
+/* SUB TEXT */
+
+#section2 p:nth-child(3){
+    color:#bcbcbc;
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+/* DESCRIPTION */
+
+#section2 p:nth-child(4){
+    color:#7f7f7f;
+    width:52%;
+    line-height:1.9;
+    font-size:15px;
+    margin-bottom:28px;
+}
+
+/* BUTTON */
+
+#section2 button{
+    padding:14px 28px;
+    border-radius:50px;
+    border:1px solid #ff7b00;
+    background:transparent;
+    color:#ff7b00;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#section2 button:hover{
+    background:#ff7b00;
+    color:black;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:25px;
+    border-top:1px solid #1d1d1d;
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* FOOTER LEFT */
+
+#box1 p{
+    color:#777;
+    font-size:14px;
+}
+
+/* FOOTER CENTER */
+
+#box2{
+    display:flex;
+    gap:25px;
+}
+
+#box2 p{
+    color:#999;
+    cursor:pointer;
+    transition:.3s;
+    font-size:14px;
+}
+
+#box2 p:hover{
+    color:#ff7b00;
+}
+
+/* FOOTER RIGHT */
+
+#box3{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+#box3 p{
+    color:#999;
+    font-size:14px;
+    margin-right:8px;
+}
+
+#box3 i{
+    width:35px;
+    height:35px;
+    border:1px solid #ff7b00;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ff7b00;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#box3 i:hover{
+    background:#ff7b00;
+    color:black;
+    transform:translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    body{
+        padding:30px;
+    }
+
+    header h1{
+        font-size:48px;
+    }
+
+    #section2 h1{
+        font-size:42px;
+    }
+
+    #section2 p:nth-child(4){
+        width:100%;
+    }
+
+    footer{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    #box2{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}

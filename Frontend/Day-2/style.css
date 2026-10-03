@@ -1,0 +1,46 @@
+@font-face {
+    font-family: horror;
+    src: url(./Storm\ Gust.ttf);
+}
+
+@font-face {
+    font-family: lucy;
+    src: url(./Lucy\ Said\ Ok\ Personal\ Use.ttf);
+}
+
+@font-face {
+    font-family: monu;
+    src: url(./Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: machina;
+    src: url(./NeueMachina-Regular.woff2);
+}
+
+@font-face {
+    font-family: not;
+    src: url(./Ndot-55\ \(1\).otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-family: monu;
+} */

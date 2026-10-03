@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Title -->
+      <div class="title">
+        <h2>Productivity Dashboard</h2>
+    </div>
+
+      <div class="screen">
+        <img id="destopImage" src="" alt="" />
+        
+        <!-- Weather + Clock Card -->
+        <div class="weather-card">
+          <div class="weather-left">
+            <p id="date">4 July, 2026</p>
+            <h2 id="time">
+              Saturday, 10:27:32</h2>
+            <p>Prayagraj (UP)</p>
+          </div>
+
+          <div class="weather-right">
+            <h2 id="temp">29.3°C</h2>
+            <h3 id="condition">Patchy rain nearby</h3>
+            <div class="weather-details">
+              <p id="heat">Heat Index: 33.9°C</p>
+              <p id="humidity">Humidity: 83%</p>
+              <p id="wind">Wind: 14.0 km/h</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Apps Panel -->
+        <div class="apps-panel">
+          <button class="app-btn app1">📘</button>
+          <button class="app-btn app2">📝</button>
+          <button class="app-btn app3">☕</button>
+          <button class="app-btn app4">📱</button>
+          <button class="app-btn app5">📡</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- quote-container -->
+    <div class="quote-container">
+      <div class="top">
+        <span class="tag">Quote of the Day</span>
+        <button class="quoteBtn">✖</button>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote">
+          I Like To Listen. I Have Learned A Great Deal From Listening
+          Carefully. Most People Never Listen.
+        </p>
+        <h2 class="author">Ernest Hemingway</h2>
+        <button class="getQuoteBtn">Get New Quote</button>
+      </div>
+    </div>
+
+    <!--timer-page-->
+    <div class="timer-page">
+      <div class="timerCard">
+        <header>
+          <button class="timerBtn">✖</button>
+        </header>
+      </div>
+
+      <div class="mode">Work Session</div>
+
+      <div class="timer">25:00</div>
+
+      <div class="buttons">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <!-- task-page-->
+    <div class="task-page">
+      <h1>Your Personalised Task List <button class="taskBtn">✖</button></h1>
+      <div class="task-wrapper">
+        <div class="left-panel">
+          <form id="taskForm">
+            <input required placeholder="Task Title" />
+            <textarea required placeholder="Task Description"></textarea>
+            <label>
+              <input type="checkbox" id="important" />
+              Mark as Important
+            </label>
+            <button>Add Task</button>
+          </form>
+        </div>
+
+        <div class="right-panel"></div>
+      </div>
+    </div>
+
+    <!-- planner-->
+    <div class="planner">
+      <h1>
+        Plan your Day to be more Productivity
+        <button class="plannerBtn">✖</button>
+      </h1>
+      <div class="planner-grid">
+        <div class="slot">
+          6:00 - 7:00
+          <input class="planner1" type="text" />
+        </div>
+
+        <div class="slot">
+          7:00 - 8:00
+          <input class="planner2" type="text" />
+        </div>
+
+        <div class="slot">
+          8:00 - 9:00
+          <input class="planner3" type="text" />
+        </div>
+
+        <div class="slot">
+          9:00 - 10:00
+          <input class="planner4" type="text" />
+        </div>
+
+        <div class="slot">
+          10:00 - 11:00
+          <input class="planner5" type="text" />
+        </div>
+
+        <div class="slot">
+          11:00 - 12:00
+          <input class="planner6" type="text" />
+        </div>
+
+        <div class="slot">
+          12:00 - 13:00
+          <input class="planner7" type="text" />
+        </div>
+
+        <div class="slot">
+          13:00 - 14:00
+          <input class="planner8" type="text" />
+        </div>
+
+        <div class="slot">
+          14:00 - 15:00
+          <input class="planner9" type="text" />
+        </div>
+
+        <div class="slot">
+          15:00 - 16:00
+          <input class="planner10" type="text" />
+        </div>
+
+        <div class="slot">
+          16:00 - 17:00
+          <input class="planner11" type="text" />
+        </div>
+
+        <div class="slot">
+          17:00 - 18:00
+          <input class="planner12" type="text" />
+        </div>
+
+        <div class="slot">
+          18:00 - 19:00
+          <input class="planner13" type="text" />
+        </div>
+
+        <div class="slot">
+          19:00 - 20:00
+          <input class="planner14" type="text" />
+        </div>
+
+        <div class="slot">
+          20:00 - 21:00
+          <input class="planner15" type="text" />
+        </div>
+
+        <div class="slot">
+          21:00 - 22:00
+          <input class="planner16" type="text" />
+        </div>
+
+        <div class="slot">
+          22:00 - 23:00
+          <input class="planner17" type="text" />
+        </div>
+
+        <div class="slot">
+          23:00 - 24:00
+          <input class="planner18" type="text" />
+        </div>
+      </div>
+    </div>
+
+    <!-- goal-page-->
+    <div class="goal-page">
+      <h1>Daily Goals <button class="goalBtn">✖</button></h1>
+
+      <div class="goal-wrapper">
+        <form class="goal-form">
+          <input placeholder="Goal Title" />
+          <textarea placeholder="Goal Description"></textarea>
+          <button type="submit" id="addGoals">Add Goals</button>
+        </form>
+
+        <div class="goal-display"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

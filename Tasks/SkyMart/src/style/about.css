@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-page {
+  background: #0d0d0d;
+  min-height: 100vh;
+  padding: 60px;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.about-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+
+.about-header h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.about-header p {
+  font-size: 15px;
+  color: #9a9a9a;
+  line-height: 1.6;
+}
+
+/* team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.team-card {
+  background: #131313;
+  border: 1px solid #232323;
+  border-radius: 16px;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d0d0d;
+  margin: 0 auto 16px;
+}
+
+.avatar-lime {
+  background: #c6ff00;
+}
+
+.avatar-blue {
+  background: #4da6ff;
+}
+
+.avatar-purple {
+  background: #9b6bf2;
+}
+
+.avatar-pink {
+  background: #f2649b;
+}
+
+.team-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.team-card p {
+  font-size: 13px;
+  color: #9a9a9a;
+}
+
+/* cta card */
+.cta-card {
+  background: #131313;
+  border: 1px solid #232323;
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.cta-card h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.cta-card p {
+  font-size: 14.5px;
+  color: #9a9a9a;
+  margin-bottom: 28px;
+}
+
+.browse-btn {
+  background: #c6ff00;
+  color: #0d0d0d;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.browse-btn:hover {
+  opacity: 0.85;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .about-page {
+    padding: 40px 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-card {
+    padding: 40px 24px;
+  }
+}
